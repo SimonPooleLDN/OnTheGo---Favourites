@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.99" systemVersion="18E226" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="DetailsModel" representedClassName="DetailsModel" syncable="YES">
+        <attribute name="isOpen" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="photos" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="price" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rating" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="list" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SavedList" inverseName="detailModel" inverseEntity="SavedList" syncable="YES"/>
+    </entity>
+    <entity name="SavedList" representedClassName="SavedList" syncable="YES">
+        <attribute name="listName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="detailModel" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DetailsModel" inverseName="list" inverseEntity="DetailsModel" syncable="YES"/>
+        <relationship name="viewModel" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ViewModel" inverseName="list" inverseEntity="ViewModel" syncable="YES"/>
+    </entity>
+    <entity name="ViewModel" representedClassName="ViewModel" syncable="YES">
+        <attribute name="distance" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imageURL" optional="YES" attributeType="URI" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="list" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SavedList" inverseName="viewModel" inverseEntity="SavedList" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="DetailsModel" positionX="-63" positionY="-18" width="128" height="180"/>
+        <element name="SavedList" positionX="-63" positionY="0" width="128" height="90"/>
+        <element name="ViewModel" positionX="-54" positionY="9" width="128" height="120"/>
+    </elements>
+</model>
